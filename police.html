@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi - Parking Jam</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0284c7 0%, #7c3aed 100%);
+            padding: 48px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(20px, -20px); }
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .app-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e0f2fe;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #0284c7, #7c3aed);
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .card li::marker {
+            color: #38bdf8;
+        }
+
+        .highlight-box {
+            background: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid #38bdf8;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            color: #bae6fd;
+            margin-bottom: 0;
+        }
+
+        .safe-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .contact-box {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .contact-box a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed #38bdf8;
+            transition: color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #7dd3fc;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        .footer span {
+            color: #64748b;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 36px 16px; }
+            .header h1 { font-size: 1.5rem; }
+            .container { padding: 20px 16px 48px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="app-badge">🚗 Parking Jam</div>
+        <h1>Kebijakan Privasi</h1>
+        <p class="subtitle">Terakhir diperbarui: 24 Juli 2026</p>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Pendahuluan -->
+        <div class="card">
+            <h2><span class="icon">📋</span> Pendahuluan</h2>
+            <p>
+                Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Parking Jam</strong> 
+                (selanjutnya disebut "Aplikasi", "Kami") yang dikembangkan oleh <strong>Strata Studio</strong> 
+                mengelola informasi pengguna. Kami menghargai dan berkomitmen melindungi privasi Anda.
+            </p>
+            <p>
+                Dengan mengunduh, menginstal, dan menggunakan Aplikasi ini, Anda menyetujui 
+                kebijakan privasi yang tertera pada halaman ini.
+            </p>
+        </div>
+
+        <!-- 2. Informasi yang Dikumpulkan -->
+        <div class="card">
+            <h2><span class="icon">🔍</span> Informasi yang Dikumpulkan</h2>
+            <p>
+                Aplikasi <strong>Parking Jam</strong> adalah game puzzle offline yang <strong>tidak mengumpulkan 
+                data pribadi pengguna</strong>. Secara spesifik:
+            </p>
+            <ul>
+                <li>Kami <strong>tidak</strong> mengumpulkan nama, alamat email, nomor telepon, atau informasi identitas pribadi lainnya.</li>
+                <li>Kami <strong>tidak</strong> mengumpulkan data lokasi (GPS) pengguna.</li>
+                <li>Kami <strong>tidak</strong> mengumpulkan foto, video, atau file dari perangkat Anda.</li>
+                <li>Kami <strong>tidak</strong> mengumpulkan riwayat penelusuran atau aktivitas online Anda.</li>
+            </ul>
+            <div class="highlight-box">
+                <p>
+                    <strong>📌 Catatan Penting:</strong> Semua data progres permainan (level, koin, pengaturan suara, dan skin mobil)
+                    disimpan secara <strong>lokal di perangkat Anda</strong> menggunakan penyimpanan internal aplikasi 
+                    dan <strong>tidak pernah dikirim ke server manapun</strong>.
+                </p>
+            </div>
+            <span class="safe-badge">✅ Tidak Ada Pengumpulan Data Pribadi</span>
+        </div>
+
+        <!-- 3. Izin Aplikasi -->
+        <div class="card">
+            <h2><span class="icon">🔐</span> Izin Aplikasi</h2>
+            <p>
+                Aplikasi ini memerlukan izin minimum untuk berjalan:
+            </p>
+            <ul>
+                <li><strong>Akses Internet (opsional):</strong> Digunakan hanya untuk memuat font Google Fonts saat pertama kali dijalankan. Tidak ada data pengguna yang dikirimkan.</li>
+                <li><strong>Penyimpanan Internal:</strong> Digunakan untuk menyimpan progres permainan secara lokal di perangkat Anda.</li>
+            </ul>
+            <p>
+                Aplikasi ini <strong>tidak</strong> memerlukan akses kamera, mikrofon, kontak, lokasi, atau izin sensitif lainnya.
+            </p>
+        </div>
+
+        <!-- 4. Layanan Pihak Ketiga -->
+        <div class="card">
+            <h2><span class="icon">🌐</span> Layanan Pihak Ketiga</h2>
+            <p>
+                Aplikasi <strong>Parking Jam</strong> saat ini <strong>tidak menggunakan</strong> layanan analitik, 
+                pelacakan (tracking), atau jaringan iklan pihak ketiga seperti Google Analytics, 
+                Firebase Analytics, Facebook SDK, atau platform serupa.
+            </p>
+            <p>
+                Jika di masa mendatang kami mengintegrasikan layanan pihak ketiga, 
+                kebijakan privasi ini akan diperbarui terlebih dahulu untuk memberitahu Anda.
+            </p>
+        </div>
+
+        <!-- 5. Keamanan Data -->
+        <div class="card">
+            <h2><span class="icon">🛡️</span> Keamanan Data</h2>
+            <p>
+                Karena kami tidak mengumpulkan atau mengirimkan data pribadi apapun, 
+                risiko kebocoran data dari Aplikasi ini sangat minimal. Seluruh data game 
+                tersimpan hanya di penyimpanan lokal perangkat Anda dan sepenuhnya berada 
+                di bawah kendali Anda.
+            </p>
+            <p>
+                Menghapus instalasi (uninstall) Aplikasi akan menghapus seluruh data permainan 
+                yang tersimpan di perangkat Anda secara permanen.
+            </p>
+        </div>
+
+        <!-- 6. Privasi Anak-Anak -->
+        <div class="card">
+            <h2><span class="icon">👶</span> Privasi Anak-Anak</h2>
+            <p>
+                Aplikasi <strong>Parking Jam</strong> aman digunakan oleh semua kalangan usia, 
+                termasuk anak-anak di bawah 13 tahun. Kami tidak mengumpulkan informasi pribadi 
+                dari siapapun, termasuk anak-anak.
+            </p>
+            <p>
+                Aplikasi ini tidak mengandung konten kekerasan, perjudian, atau materi 
+                tidak pantas lainnya. Game ini dikategorikan sebagai <strong>Semua Umur (PEGI 3 / Everyone)</strong>.
+            </p>
+        </div>
+
+        <!-- 7. Perubahan Kebijakan -->
+        <div class="card">
+            <h2><span class="icon">📝</span> Perubahan Kebijakan Privasi</h2>
+            <p>
+                Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. 
+                Setiap perubahan akan dipublikasikan pada halaman ini dengan tanggal pembaruan terbaru. 
+                Kami menyarankan Anda untuk meninjau halaman ini secara berkala untuk mengetahui 
+                perubahan terbaru.
+            </p>
+            <p>
+                Perubahan pada kebijakan ini berlaku efektif segera setelah dipublikasikan di halaman ini.
+            </p>
+        </div>
+
+        <!-- 8. Hubungi Kami -->
+        <div class="card contact-box">
+            <h2 style="justify-content: center;"><span class="icon">📧</span> Hubungi Kami</h2>
+            <p>
+                Jika Anda memiliki pertanyaan atau saran mengenai Kebijakan Privasi ini, 
+                jangan ragu untuk menghubungi kami melalui email:
+            </p>
+            <p style="margin-top: 16px; font-size: 1.1rem;">
+                <a href="mailto:support@strata.id">parkingjamsupport@gmail.com</a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2026 <span></span>. Semua Hak Dilindungi.</p>
+        <p style="margin-top: 4px;">Parking Jam — Puzzle Parkir Mobil Seru!</p>
+    </div>
+
+</body>
+</html>
